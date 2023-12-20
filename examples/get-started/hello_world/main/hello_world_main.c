@@ -11,11 +11,20 @@
 #include "freertos/task.h"
 #include "esp_system.h"
 #include "esp_spi_flash.h"
+#include "driver/uart.h"
 
 
 void app_main()
 {
     printf("Hello world!\n");
+    uint32_t baud = 115200;
+    uart_port_t port = UART_NUM_0;
+    printf("Switching to %d baud rate\n", baud);
+    esp_err_t baud_err = uart_set_baudrate(port, baud);
+    if (baud_err != ESP_OK) {
+	    printf("Failed to switch to %d baud rate\n: Invalid argument.", baud);
+    }
+
 
     /* Print chip information */
     esp_chip_info_t chip_info;
