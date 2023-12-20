@@ -17,7 +17,7 @@ See the [`hello_world_main.c`](../examples/get-started/hello_world/main/hello_wo
 
 ## Problem: corrupt output
 
-If switch happens right after print, the output gets corrupted.
+If switch happens right after print, the output gets corrupted, when reading on both new and old baud rates.
 
 To introduce delay/synchronisation after the last old-baud print:
 
