@@ -20,10 +20,12 @@ void app_main()
     uint32_t baud = 115200;
     uart_port_t port = UART_NUM_0;
     printf("Switching to %d baud rate\n", baud);
+    vTaskDelay(30 / portTICK_PERIOD_MS);
     esp_err_t baud_err = uart_set_baudrate(port, baud);
     if (baud_err != ESP_OK) {
 	    printf("Failed to switch to %d baud rate\n: Invalid argument.", baud);
     }
+    printf("==Serial baud rate: %d ==\n", baud);
 
 
     /* Print chip information */
