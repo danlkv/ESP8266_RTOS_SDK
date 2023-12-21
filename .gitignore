@@ -1,6 +1,7 @@
 *.o
 *.pyc
 
+
 # eclipse setting
 .settings
 .cproject
@@ -32,10 +33,14 @@ docs/doxygen_sqlite3.db
 # emacs
 .dir-locals.el
 
+
 # emacs temp file suffixes
 *~
 .#*
 \#*#
+
+# vim swap files
+*.swp
 
 # eclipse setting
 .settings
